@@ -11,8 +11,7 @@ namespace APIVerve.API.BoggleBoardGenerator
     public class BoggleBoardGeneratorQueryOptions
     {
         /// <summary>
-        /// Board size (4 or 5)
-        /// Example: 4
+        /// Board size
         /// </summary>
         [JsonProperty("size")]
         public string Size { get; set; }
