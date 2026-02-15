@@ -1,0 +1,16 @@
+name: apiverve_boggleboardgenerator
+description: Boggle Board Generator creates random Boggle game boards with authentic dice configurations, HTML rendering, and downloadable PNG images.
+version: 1.1.13
+homepage: https://apiverve.com/marketplace/boggleboardgenerator?utm_source=dart&utm_medium=homepage
+repository: https://github.com/apiverve/boggleboardgenerator-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
