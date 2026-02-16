@@ -249,8 +249,9 @@ from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClien
 
 api = BoggleboardgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = { "size": 4 }
+
 try:
-    query = { "size": 4 }
     result = api.execute(query)
     print(result)
 finally:
