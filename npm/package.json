@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/boggleboardgenerator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Boggle Board Generator creates random Boggle game boards with authentic dice configurations, HTML rendering, and downloadable PNG images.",
   "main": "index.js",
   "types": "index.d.ts",
