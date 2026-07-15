@@ -30,7 +30,7 @@ class boggleboardgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/boggleboardgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"size":{"type":"integer","required":false,"default":4}};
+        this.validationRules = {"size":{"type":"integer","required":false,"default":4},"image":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
