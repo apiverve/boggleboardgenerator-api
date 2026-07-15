@@ -29,6 +29,13 @@ paths:
           required: false
           description: Board size
           example: 4
+        - name: image
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Set to true to generate a downloadable board image
+          example: true
       responses:
         '200':
           description: Successful Response
