@@ -15,7 +15,8 @@ const api = new boggleboardgeneratorAPI({
 
 // Example query
 var query = {
-  size: 4
+  size: 4,
+  image: false
 };
 
 // Make the API request using callback
