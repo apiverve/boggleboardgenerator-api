@@ -13,7 +13,12 @@ const API_URL = 'https://api.apiverve.com/v1/boggleboardgenerator';
  */
 async function callBoggleBoardGeneratorAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            size: 4
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
