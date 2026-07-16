@@ -14,6 +14,12 @@ namespace APIVerve.API.BoggleBoardGenerator
         /// Board size
         /// </summary>
         [JsonProperty("size")]
-        public string Size { get; set; }
+        public int? Size { get; set; }
+
+        /// <summary>
+        /// Set to true to generate a downloadable board image
+        /// </summary>
+        [JsonProperty("image")]
+        public bool? Image { get; set; }
     }
 }
