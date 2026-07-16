@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.BoggleBoardGenerator;
 
 class Program
 {
@@ -60,8 +60,9 @@ class Program
         // Initialize the API client
         var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = 4
+        var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
         // Make the API call
@@ -116,7 +117,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.BoggleBoardGenerator;
 
 public class Example
 {
@@ -124,8 +125,9 @@ public class Example
     {
         var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = 4
+        var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +150,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.BoggleBoardGenerator;
 
 public class Example
 {
@@ -156,8 +158,9 @@ public class Example
     {
         var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = 4
+        var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +188,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.BoggleBoardGenerator;
 
 public class Example
 {
@@ -193,8 +196,9 @@ public class Example
     {
         var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = 4
+        var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
         try
@@ -237,7 +241,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.BoggleBoardGenerator;
 
 public class Example
 {
@@ -249,8 +253,9 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    size = 4
+        var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
         try
@@ -290,8 +295,9 @@ var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    size = 4
+var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    size = 4
+var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +341,9 @@ var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    size = 4
+var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +354,9 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    size = 4
+var queryOptions = new BoggleBoardGeneratorQueryOptions {
+    Size = 4,
+    Image = true
 };
 
 using (var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -369,37 +378,37 @@ using (var apiClient = new BoggleBoardGeneratorAPIClient("[YOUR_API_KEY]"))
   "data": {
     "board": [
       [
-        "Qu",
-        "X",
-        "H",
-        "Y"
+        "U",
+        "A",
+        "Z",
+        "H"
       ],
       [
-        "U",
-        "S",
-        "A",
+        "Y",
+        "L",
+        "E",
         "A"
       ],
       [
-        "F",
-        "R",
+        "A",
         "I",
-        "P"
+        "E",
+        "F"
       ],
       [
-        "N",
-        "I",
+        "T",
         "D",
-        "W"
+        "E",
+        "X"
       ]
     ],
     "size": 4,
-    "html": "<html><head><title>Boggle Board</title><style>table {border-collapse: collapse; width: 320px; height: 320px; font-family: Arial, sans-serif;}td {text-align: center; width: 80px; height: 80px; padding: 0; border: 2px solid #333; background-color: #f5e6d3; font-size: 24px; font-weight: bold; color: #2c1810;}</style></head><body><table><tr><td>Qu</td><td>X</td><td>H</td><td>Y</td></tr><tr><td>U</td><td>S</td><td>A</td><td>A</td></tr><tr><td>F</td><td>R</td><td>I</td><td>P</td></tr><tr><td>N</td><td>I</td><td>D</td><td>W</td></tr></table></body></html>",
+    "html": "<html><head><title>Boggle Board</title><style>table {border-collapse: collapse; width: 320px; height: 320px; font-family: Arial, sans-serif;}td {text-align: center; width: 80px; height: 80px; padding: 0; border: 2px solid #333; background-color: #f5e6d3; font-size: 24px; font-weight: bold; color: #2c1810;}</style></head><body><table><tr><td>U</td><td>A</td><td>Z</td><td>H</td></tr><tr><td>Y</td><td>L</td><td>E</td><td>A</td></tr><tr><td>A</td><td>I</td><td>E</td><td>F</td></tr><tr><td>T</td><td>D</td><td>E</td><td>X</td></tr></table></body></html>",
     "image": {
-      "imageName": "bc827ac0-ef2c-40e4-81a3-2fc6477c5fd2_boggle.png",
+      "imageName": "e91f26a6-95fc-47c1-9117-b0bb169c3418_boggle.png",
       "format": ".png",
-      "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/boggleboardgenerator/bc827ac0-ef2c-40e4-81a3-2fc6477c5fd2_boggle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1763884450&Signature=WBy6c0%2FJsQiYNGTbjhn46R%2F9NEBMc1ENfFHpnBSEgLajqvdygFcjfuyay4q9jTkryOyAGjmOrVX%2F3TkFh6XT6sefI3s9hlEd6w9EiVFe4j6Y0zRKgJbxINkQHTyTBUDRmFu0VkPrrvnObrQbrcxK0pTLSGAFWLfut913zt5ESt8mzcGOc9aMIcISbAFw8KfTt5CIKOddGKqhYtRwPeo2uTVNd7CJ4EdEYuJSYnchclOFsybtCSQJNN7xqGgttsvuvD2bWKPIPnkVrooCIznaoY09Wwyt216S59UH8gkGXPRhZNEEIjxnfZ4SVcOCM2ySYrd3CaGSBttp0DeR8yW1yg%3D%3D",
-      "expires": 1763884450399
+      "downloadURL": "https://storage.googleapis.com/apiverve/APIData/boggleboardgenerator/e91f26a6-95fc-47c1-9117-b0bb169c3418_boggle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010033&Signature=Y%2Bx7mfpf%2FtSwnIkgen0c5gfuBNROyJYByCnhToBZIM660VzCpCX8ON%2F9V1sBElqpDm2rePIfPMqiFG3DC5f98%2BczXodTl4TiUnDxyYm5uMv%2Fdr71kRdUnVKRMp42FkflnxQ2p8YMmRTEx279hpgRQb2BCx4e7ntQrh8uepKoaHY1G8gBOJIof0LQPSWo%2FygwA74Hmwwe8wTZcScXgTskxXm%2BpESGeOb942JiP8Pf9CL1RWOYdjIS3Kr4%2FcgnEMXPjKecOcNZaN%2BGQXm3UC6GAVHzA1QF0uOOKE%2FeyxybNRD1dc0uCUFNYHIpXpEJ8pPvzYHQlSNv1EPfpd4pMc9s9g%3D%3D",
+      "expires": 1766010033049
     }
   }
 }
