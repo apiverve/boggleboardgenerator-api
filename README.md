@@ -191,11 +191,61 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Boggle Board Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "board": [
+      [
+        "U",
+        "A",
+        "Z",
+        "H"
+      ],
+      [
+        "Y",
+        "L",
+        "E",
+        "A"
+      ],
+      [
+        "A",
+        "I",
+        "E",
+        "F"
+      ],
+      [
+        "T",
+        "D",
+        "E",
+        "X"
+      ]
+    ],
+    "size": 4,
+    "html": "<html><head><title>Boggle Board</title><style>table {border-collapse: collapse; width: 320px; height: 320px; font-family: Arial, sans-serif;}td {text-align: center; width: 80px; height: 80px; padding: 0; border: 2px solid #333; background-color: #f5e6d3; font-size: 24px; font-weight: bold; color: #2c1810;}</style></head><body><table><tr><td>U</td><td>A</td><td>Z</td><td>H</td></tr><tr><td>Y</td><td>L</td><td>E</td><td>A</td></tr><tr><td>A</td><td>I</td><td>E</td><td>F</td></tr><tr><td>T</td><td>D</td><td>E</td><td>X</td></tr></table></body></html>",
+    "image": {
+      "imageName": "e91f26a6-95fc-47c1-9117-b0bb169c3418_boggle.png",
+      "format": ".png",
+      "downloadURL": "https://storage.googleapis.com/apiverve/APIData/boggleboardgenerator/e91f26a6-95fc-47c1-9117-b0bb169c3418_boggle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010033&Signature=Y%2Bx7mfpf%2FtSwnIkgen0c5gfuBNROyJYByCnhToBZIM660VzCpCX8ON%2F9V1sBElqpDm2rePIfPMqiFG3DC5f98%2BczXodTl4TiUnDxyYm5uMv%2Fdr71kRdUnVKRMp42FkflnxQ2p8YMmRTEx279hpgRQb2BCx4e7ntQrh8uepKoaHY1G8gBOJIof0LQPSWo%2FygwA74Hmwwe8wTZcScXgTskxXm%2BpESGeOb942JiP8Pf9CL1RWOYdjIS3Kr4%2FcgnEMXPjKecOcNZaN%2BGQXm3UC6GAVHzA1QF0uOOKE%2FeyxybNRD1dc0uCUFNYHIpXpEJ8pPvzYHQlSNv1EPfpd4pMc9s9g%3D%3D",
+      "expires": 1766010033049
+    }
+  }
 }
 ```
 
