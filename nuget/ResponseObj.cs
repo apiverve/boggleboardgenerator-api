@@ -25,6 +25,9 @@ namespace APIVerve.API.BoggleBoardGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,7 +36,7 @@ namespace APIVerve.API.BoggleBoardGenerator
         public string[][] Board { get; set; }
 
         [JsonProperty("size")]
-        public long Size { get; set; }
+        public long? Size { get; set; }
 
         [JsonProperty("html")]
         public string Html { get; set; }
@@ -54,6 +57,18 @@ namespace APIVerve.API.BoggleBoardGenerator
         public Uri DownloadUrl { get; set; }
 
         [JsonProperty("expires")]
-        public long Expires { get; set; }
+        public long? Expires { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
