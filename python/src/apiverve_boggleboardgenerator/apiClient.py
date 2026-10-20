@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,8 @@ class ValidationError(BoggleboardgeneratorAPIClientError):
 class BoggleboardgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "size": {"type": "integer", "required": False, "default": 4}
+        "size": {"type": "integer", "required": False, "default": 4},
+        "image": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns

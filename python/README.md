@@ -3,11 +3,10 @@ Boggle Board Generator API
 
 Boggle Board Generator creates random Boggle game boards with authentic dice configurations, HTML rendering, and downloadable PNG images.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Boggle Board Generator API](https://apiverve.com/marketplace/boggleboardgenerator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-boggleboardgenerator.svg)](https://pypi.org/project/apiverve-boggleboardgenerator/)
+
+This is a Python wrapper for the [Boggle Board Generator API](https://apiverve.com/marketplace/boggleboardgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-boggleboardgenerator
 
 ## Configuration
 
-Before using the boggleboardgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Boggle Board Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -44,7 +43,10 @@ from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClien
 # Initialize the client with your APIVerve API key
 api = BoggleboardgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 
 try:
     # Make the API call
@@ -60,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Boggle Board Generator API documentation is found here: [https://docs.apiverve.com/ref/boggleboardgenerator](https://docs.apiverve.com/ref/boggleboardgenerator?utm_source=pypi&utm_medium=readme).
+The Boggle Board Generator API documentation is found here: [https://docs.apiverve.com/ref/boggleboardgenerator](https://docs.apiverve.com/ref/boggleboardgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -82,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 ```
 
 ###### Simple Request
@@ -104,37 +109,37 @@ print(result)
   "data": {
     "board": [
       [
-        "Qu",
-        "X",
-        "H",
-        "Y"
+        "U",
+        "A",
+        "Z",
+        "H"
       ],
       [
-        "U",
-        "S",
-        "A",
+        "Y",
+        "L",
+        "E",
         "A"
       ],
       [
-        "F",
-        "R",
+        "A",
         "I",
-        "P"
+        "E",
+        "F"
       ],
       [
-        "N",
-        "I",
+        "T",
         "D",
-        "W"
+        "E",
+        "X"
       ]
     ],
     "size": 4,
-    "html": "<html><head><title>Boggle Board</title><style>table {border-collapse: collapse; width: 320px; height: 320px; font-family: Arial, sans-serif;}td {text-align: center; width: 80px; height: 80px; padding: 0; border: 2px solid #333; background-color: #f5e6d3; font-size: 24px; font-weight: bold; color: #2c1810;}</style></head><body><table><tr><td>Qu</td><td>X</td><td>H</td><td>Y</td></tr><tr><td>U</td><td>S</td><td>A</td><td>A</td></tr><tr><td>F</td><td>R</td><td>I</td><td>P</td></tr><tr><td>N</td><td>I</td><td>D</td><td>W</td></tr></table></body></html>",
+    "html": "<html><head><title>Boggle Board</title><style>table {border-collapse: collapse; width: 320px; height: 320px; font-family: Arial, sans-serif;}td {text-align: center; width: 80px; height: 80px; padding: 0; border: 2px solid #333; background-color: #f5e6d3; font-size: 24px; font-weight: bold; color: #2c1810;}</style></head><body><table><tr><td>U</td><td>A</td><td>Z</td><td>H</td></tr><tr><td>Y</td><td>L</td><td>E</td><td>A</td></tr><tr><td>A</td><td>I</td><td>E</td><td>F</td></tr><tr><td>T</td><td>D</td><td>E</td><td>X</td></tr></table></body></html>",
     "image": {
-      "imageName": "bc827ac0-ef2c-40e4-81a3-2fc6477c5fd2_boggle.png",
+      "imageName": "e91f26a6-95fc-47c1-9117-b0bb169c3418_boggle.png",
       "format": ".png",
-      "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/boggleboardgenerator/bc827ac0-ef2c-40e4-81a3-2fc6477c5fd2_boggle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1763884450&Signature=WBy6c0%2FJsQiYNGTbjhn46R%2F9NEBMc1ENfFHpnBSEgLajqvdygFcjfuyay4q9jTkryOyAGjmOrVX%2F3TkFh6XT6sefI3s9hlEd6w9EiVFe4j6Y0zRKgJbxINkQHTyTBUDRmFu0VkPrrvnObrQbrcxK0pTLSGAFWLfut913zt5ESt8mzcGOc9aMIcISbAFw8KfTt5CIKOddGKqhYtRwPeo2uTVNd7CJ4EdEYuJSYnchclOFsybtCSQJNN7xqGgttsvuvD2bWKPIPnkVrooCIznaoY09Wwyt216S59UH8gkGXPRhZNEEIjxnfZ4SVcOCM2ySYrd3CaGSBttp0DeR8yW1yg%3D%3D",
-      "expires": 1763884450399
+      "downloadURL": "https://storage.googleapis.com/apiverve/APIData/boggleboardgenerator/e91f26a6-95fc-47c1-9117-b0bb169c3418_boggle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010033&Signature=Y%2Bx7mfpf%2FtSwnIkgen0c5gfuBNROyJYByCnhToBZIM660VzCpCX8ON%2F9V1sBElqpDm2rePIfPMqiFG3DC5f98%2BczXodTl4TiUnDxyYm5uMv%2Fdr71kRdUnVKRMp42FkflnxQ2p8YMmRTEx279hpgRQb2BCx4e7ntQrh8uepKoaHY1G8gBOJIof0LQPSWo%2FygwA74Hmwwe8wTZcScXgTskxXm%2BpESGeOb942JiP8Pf9CL1RWOYdjIS3Kr4%2FcgnEMXPjKecOcNZaN%2BGQXm3UC6GAVHzA1QF0uOOKE%2FeyxybNRD1dc0uCUFNYHIpXpEJ8pPvzYHQlSNv1EPfpd4pMc9s9g%3D%3D",
+      "expires": 1766010033049
     }
   }
 }
@@ -153,7 +158,10 @@ from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClien
 
 api = BoggleboardgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 
 try:
     result = api.execute(query)
@@ -174,7 +182,10 @@ from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClien
 
 api = BoggleboardgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 
 try:
     result = api.execute(query)
@@ -208,7 +219,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClient, BoggleboardgeneratorAPIClientError
 
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 
 # Using context manager ensures proper cleanup
 with BoggleboardgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -234,7 +248,10 @@ from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClien
 # Enable debug mode
 api = BoggleboardgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -249,7 +266,10 @@ from apiverve_boggleboardgenerator.apiClient import BoggleboardgeneratorAPIClien
 
 api = BoggleboardgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "size": 4 }
+query = {
+    "size": 4,
+    "image": true
+}
 
 try:
     result = api.execute(query)
@@ -263,7 +283,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -274,12 +294,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
