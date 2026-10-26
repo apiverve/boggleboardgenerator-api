@@ -1,7 +1,7 @@
 {
     "name": "apiverve/boggleboardgenerator",
     "description": "Boggle Board Generator creates random Boggle game boards with authentic dice configurations, HTML rendering, and downloadable PNG images.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
