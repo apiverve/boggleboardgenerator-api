@@ -46,10 +46,11 @@ final _formatPatterns = {
 
 /// Boggle Board Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/boggleboardgenerator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/boggleboardgenerator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [size] - Board size
+/// * [image] - Set to true to generate a downloadable board image
 class BoggleboardgeneratorClient {
   final String apiKey;
   final String baseUrl;
@@ -58,6 +59,7 @@ class BoggleboardgeneratorClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'size': ValidationRule(type: 'integer', required: false),
+    'image': ValidationRule(type: 'boolean', required: false),
   };
 
   BoggleboardgeneratorClient(this.apiKey, {

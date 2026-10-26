@@ -2,7 +2,7 @@
 ///
 /// Boggle Board Generator creates random Boggle game boards with authentic dice configurations, HTML rendering, and downloadable PNG images.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/boggleboardgenerator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/boggleboardgenerator?utm_source=dart&utm_medium=referral&utm_content=readme
 library apiverve_boggleboardgenerator;
 
 export 'src/client.dart';
